@@ -1,18 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Contribution } from "./contributions";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { contributionInitialAnimation } from "@/animation/about";
 import classNames from "classnames";
 
 type AboutProps = {};
 
 export const About = ({}: AboutProps) => {
-  const leftRef = useRef(null);
-  const isInViewLeft = useInView(leftRef, { margin: "0px 0px -300px 0px" });
-  const rightRef = useRef(null);
-  const isInViewRight = useInView(rightRef, { margin: "0px 0px -300px 0px" });
-
   return (
     <div className="lg:w-[90%] w-[95%] max-w-[1186px]  grid grid-rows-3 lg:grid-rows-5 grid-flow-col grid-cols-1 lg:grid-cols-6 gap-2">
       {/* contribution */}
@@ -26,10 +21,8 @@ export const About = ({}: AboutProps) => {
 
       {/* left */}
       <div
-        ref={leftRef}
         className={classNames(
-          "bg-[#131315] rounded-[30px] border border-[#262626] lg:row-span-3 row-span-1 lg:col-span-2 flex flex-col text-center items-center justify-center col-span-1 opacity-0 transition-all duration-500 ease-in-out translate-x-[-100%]",
-          { "opacity-100 translate-x-[0%]": isInViewLeft }
+          "bg-[#131315] rounded-[30px] border border-[#262626] lg:row-span-3 row-span-1 lg:col-span-2 flex flex-col text-center items-center justify-center col-span-1"
         )}
       >
         <Image
@@ -46,12 +39,8 @@ export const About = ({}: AboutProps) => {
 
       {/* right */}
       <div
-        ref={rightRef}
         className={classNames(
-          "bg-[#131315] rounded-[30px] border border-[#262626] lg:row-span-3 row-span-1 col-span-1 text-center lg:text-left lg:col-span-4 p-5 pb-10  opacity-0 translate-x-[100%] transition-all duration-500 ease-in-out",
-          {
-            "opacity-100 translate-x-[0%]": isInViewRight,
-          }
+          "bg-[#131315] rounded-[30px] border border-[#262626] lg:row-span-3 row-span-1 col-span-1 text-center lg:text-left lg:col-span-4 p-5 pb-10"
         )}
       >
         <p className="text-[#999898] text-[20px] md:text-[25px] lg:text-[30px] font-medium ">

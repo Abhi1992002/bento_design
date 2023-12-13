@@ -6,31 +6,12 @@ import React, { useRef } from "react";
 type ProjectProps = {};
 
 export const Project = ({}: ProjectProps) => {
-  const leftRef = useRef(null);
-  const isInViewLeft = useInView(leftRef, { margin: "0px 0px -300px 0px" });
-  const rightRef = useRef(null);
-  const isInViewRight = useInView(rightRef, { margin: "0px 0px -300px 0px" });
-
-  const projectRef = useRef(null);
-  const isInViewProject = useInView(projectRef, {
-    margin: "0px 0px -100px 0px",
-  });
-
-  const notionRef = useRef(null);
-  const isInViewNotion = useInView(notionRef, {
-    margin: "0px 0px 200px 0px",
-    once: true,
-  });
   return (
     <div className="lg:w-[90%] max-w-[1186px] w-[95%]  grid grid-rows-13 grid-flow-row gap-2">
       {/* project heading , center */}
       <div
-        ref={projectRef}
         className={classNames(
-          "bg-[#131315] py-10 rounded-[30px] border border-[#262626] row-span-1 col-span-3 flex items-center justify-center transition-all duration-500 ease-in-out opacity-0 translate-y-[100%]",
-          {
-            "opacity-100 translate-y-[0]": isInViewProject,
-          }
+          "bg-[#131315] py-10 rounded-[30px] border border-[#262626] row-span-1 col-span-3 flex items-center justify-center "
         )}
       >
         <p className="  font-bold z-[1]  text-transparent text-5xl lg:text-7xl pb-2 bg-clip-text bg-gradient-to-r from-green-200  to-green-600 max-h-[110px]">
@@ -47,12 +28,8 @@ export const Project = ({}: ProjectProps) => {
 
       {/* notion clone */}
       <div
-        ref={notionRef}
         className={classNames(
-          "bg-[#131315] rounded-[30px] border  border-[#262626] flex gap-8 flex-col row-span-4 col-span-3 transition-all duration-500 ease-in-out opacity-0 translate-y-[100%]",
-          {
-            "opacity-100 translate-y-[0]": isInViewNotion,
-          }
+          "bg-[#131315] rounded-[30px] border  border-[#262626] flex gap-8 flex-col row-span-4 col-span-3 "
         )}
       >
         <div className="flex items-center mt-8 ml-8 gap-4">
